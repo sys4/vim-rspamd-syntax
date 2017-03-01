@@ -2,27 +2,6 @@ if exists("b:current_syntax")
     finish
 endif
 
-" Common keywords
-syntax keyword rspamdKeyword description
-syntax keyword rspamdKeyword expire
-syntax keyword rspamdKeyword group
-syntax keyword rspamdKeyword hash
-syntax keyword rspamdKeyword key_prefix
-syntax keyword rspamdKeyword learn_condition
-syntax keyword rspamdKeyword patterns
-syntax keyword rspamdKeyword rule
-syntax keyword rspamdKeyword symbol
-syntax keyword rspamdKeyword type
-syntax keyword rspamdKeyword weight
-syntax keyword rspamdKeyword whitelist
-
-syntax keyword rspamdKeyword action actions
-syntax keyword rspamdKeyword facility level
-syntax keyword rspamdKeyword host servers
-syntax keyword rspamdKeyword pidfile filename
-syntax keyword rspamdKeyword no_action greylist add_header rewrite_subject soft_bounce reject
-syntax keyword rspamdKeyword score scores max_score min_score score_divisor flag
-
 " Configuration sections
 syntax match rspamdKeyword "\s*\.include"
 syntax match rspamdKeyword "\s*logging"
@@ -41,36 +20,279 @@ syntax keyword rspamdIncludeKeyword try priority duplicate
 syntax keyword rspamdModuleKeyword antivirus
 syntax keyword rspamdModuleKeyword asn
 syntax keyword rspamdModuleKeyword dcc
+syntax keyword rspamdModuleKeyword chartable
+syntax keyword rspamdModuleKeyword clickhouse
+syntax keyword rspamdModuleKeyword dcc
+syntax keyword rspamdModuleKeyword dkim
 syntax keyword rspamdModuleKeyword dmarc
-syntax keyword rspamdModuleKeyword fann_scores
+syntax keyword rspamdModuleKeyword emails
+syntax keyword rspamdModuleKeyword fann_redis
+syntax keyword rspamdModuleKeyword force_actions
+syntax keyword rspamdModuleKeyword forged_recipients
 syntax keyword rspamdModuleKeyword fuzzy_check
+syntax keyword rspamdModuleKeyword greylist
+syntax keyword rspamdModuleKeyword hfilter
 syntax keyword rspamdModuleKeyword ip_score
+syntax keyword rspamdModuleKeyword maillist
+syntax keyword rspamdModuleKeyword metadata_exporter
+syntax keyword rspamdModuleKeyword metric_exporter
+syntax keyword rspamdModuleKeyword mid
+syntax keyword rspamdModuleKeyword mime_types
+syntax keyword rspamdModuleKeyword multimap
 syntax keyword rspamdModuleKeyword mx_check
+syntax keyword rspamdModuleKeyword once_received
 syntax keyword rspamdModuleKeyword phishing
+syntax keyword rspamdModuleKeyword ratelimit
+syntax keyword rspamdModuleKeyword rbl
 syntax keyword rspamdModuleKeyword redis
+syntax keyword rspamdModuleKeyword regexp
 syntax keyword rspamdModuleKeyword replies
+syntax keyword rspamdModuleKeyword rmilter_headers
+syntax keyword rspamdModuleKeyword rspamd_update
+syntax keyword rspamdModuleKeyword settings
+syntax keyword rspamdModuleKeyword spf
+syntax keyword rspamdModuleKeyword surbl
+syntax keyword rspamdModuleKeyword url_redirector
+syntax keyword rspamdModuleKeyword url_reputation
+syntax keyword rspamdModuleKeyword url_tags
+"syntax keyword rspamdModuleKeyword whitelist
 
 " Lua and C module parameter
-" antivirus
-syntax keyword rspamdParamKeyword first second third attachments_only
-" asn
-syntax keyword rspamdParamKeyword provider_type provider_info ip4 ip6
-" dmarc
-syntax keyword rspamdParamKeyword reporting quarantine
-" fann_scores
-syntax keyword rspamdParamKeyword fann_file train max_train max_epoch spam_score ham_score use_settings
-" fuzzy_check
-syntax keyword rspamdParamKeyword read_only skip_unknown algorithm fuzzy_map
-" ip_score
-syntax keyword rspamdParamKeyword country ipnet ip asn_prefix country_prefix ipnet_prefix lower_bound
-" mime_types
-syntax keyword rspamdParamKeyword extension_map bad_extensions bad_archive_extensions archive_extensions html txt pdf
-" mx_check
-syntax keyword rspamdParamKeyword timeout symbol_bad_mx symbol_no_mx symbol_good_mx
-" phishing
-syntax keyword rspamdParamKeyword phishtank_enabled phishtank_map domains redirector_domains strict_domains openphish_map openphish_premium
-" replies
+syntax keyword rspamdParamKeyword action
+syntax keyword rspamdParamKeyword actions
+syntax keyword rspamdParamKeyword add_header
+syntax keyword rspamdParamKeyword add_header_score
+syntax keyword rspamdParamKeyword algorithm
+syntax keyword rspamdParamKeyword archive_extensions
+syntax keyword rspamdParamKeyword asn_prefix
+syntax keyword rspamdParamKeyword asn_table
+syntax keyword rspamdParamKeyword attachments_only
+syntax keyword rspamdParamKeyword attachments_table
+syntax keyword rspamdParamKeyword authentication-results
+syntax keyword rspamdParamKeyword autolearn
+syntax keyword rspamdParamKeyword backend
+syntax keyword rspamdParamKeyword bad_archive_extensions
+syntax keyword rspamdParamKeyword bad_extensions
+syntax keyword rspamdParamKeyword bad_host
+syntax keyword rspamdParamKeyword bayes_ham_symbols
+syntax keyword rspamdParamKeyword bayes_spam_symbols
+syntax keyword rspamdParamKeyword bits
+syntax keyword rspamdParamKeyword bounce_to
+syntax keyword rspamdParamKeyword bounce_to_ip
+syntax keyword rspamdParamKeyword check_ssl
+syntax keyword rspamdParamKeyword clamav
+syntax keyword rspamdParamKeyword classifier
+syntax keyword rspamdParamKeyword country
+syntax keyword rspamdParamKeyword country_prefix
+syntax keyword rspamdParamKeyword custom_select
+syntax keyword rspamdParamKeyword db
+syntax keyword rspamdParamKeyword default_exclude_users
+syntax keyword rspamdParamKeyword default_from
+syntax keyword rspamdParamKeyword default_received
+syntax keyword rspamdParamKeyword default_unknown
+syntax keyword rspamdParamKeyword description
+syntax keyword rspamdParamKeyword disabled_modules
+syntax keyword rspamdParamKeyword disposable_cc
+syntax keyword rspamdParamKeyword disposable_envfrom
+syntax keyword rspamdParamKeyword disposable_envrcpt
+syntax keyword rspamdParamKeyword disposable_from
+syntax keyword rspamdParamKeyword disposable_replyto
+syntax keyword rspamdParamKeyword disposable_to
+syntax keyword rspamdParamKeyword dkim_allow_symbols
+syntax keyword rspamdParamKeyword dkim_cache_expire
+syntax keyword rspamdParamKeyword dkim_cache_size
+syntax keyword rspamdParamKeyword dkim_reject_symbols
+syntax keyword rspamdParamKeyword dmarc_allow_symbols
+syntax keyword rspamdParamKeyword dmarc_reject_symbols
+syntax keyword rspamdParamKeyword domains
+syntax keyword rspamdParamKeyword enabled
+syntax keyword rspamdParamKeyword enable_password
+syntax keyword rspamdParamKeyword encryption_key
+syntax keyword rspamdParamKeyword exceptions
+syntax keyword rspamdParamKeyword exclude_local
+syntax keyword rspamdParamKeyword exclude_private_ips
+syntax keyword rspamdParamKeyword exclude_users
+syntax keyword rspamdParamKeyword expire
+syntax keyword rspamdParamKeyword expression
+syntax keyword rspamdParamKeyword extension_map
+syntax keyword rspamdParamKeyword facility
+syntax keyword rspamdParamKeyword fann_file
+syntax keyword rspamdParamKeyword fann_symbols
+syntax keyword rspamdParamKeyword file
+syntax keyword rspamdParamKeyword filename
+syntax keyword rspamdParamKeyword filter
+syntax keyword rspamdParamKeyword first
+syntax keyword rspamdParamKeyword flag
+syntax keyword rspamdParamKeyword foreign_symbols
+syntax keyword rspamdParamKeyword formatter
+syntax keyword rspamdParamKeyword freemail_cc
+syntax keyword rspamdParamKeyword freemail_envfrom
+syntax keyword rspamdParamKeyword freemail_envrcpt
+syntax keyword rspamdParamKeyword freemail_from
+syntax keyword rspamdParamKeyword freemail_replyto
+syntax keyword rspamdParamKeyword freemail_to
+syntax keyword rspamdParamKeyword from
+syntax keyword rspamdParamKeyword from_enabled
+syntax keyword rspamdParamKeyword from_tables
+syntax keyword rspamdParamKeyword full_urls
+syntax keyword rspamdParamKeyword fuzzy_key
+syntax keyword rspamdParamKeyword fuzzy_map
+syntax keyword rspamdParamKeyword fuzzy_shingles_key
+syntax keyword rspamdParamKeyword fuzzy_symbols
+syntax keyword rspamdParamKeyword good_host
+syntax keyword rspamdParamKeyword greylist
+syntax keyword rspamdParamKeyword group
+syntax keyword rspamdParamKeyword ham_score
+syntax keyword rspamdParamKeyword hash
+syntax keyword rspamdParamKeyword header
+syntax keyword rspamdParamKeyword helo
+syntax keyword rspamdParamKeyword helo_enabled
+syntax keyword rspamdParamKeyword host
+syntax keyword rspamdParamKeyword hostname_enabled
+syntax keyword rspamdParamKeyword html
+syntax keyword rspamdParamKeyword ignore_surbl
+syntax keyword rspamdParamKeyword ignore_tags
+syntax keyword rspamdParamKeyword ignore_whitelists
+syntax keyword rspamdParamKeyword ip4
+syntax keyword rspamdParamKeyword ip6
+syntax keyword rspamdParamKeyword ip asn_prefix
+syntax keyword rspamdParamKeyword ipmask
+syntax keyword rspamdParamKeyword ipmask6
+syntax keyword rspamdParamKeyword ipnet
+syntax keyword rspamdParamKeyword ipnet_prefix
+syntax keyword rspamdParamKeyword ips
+syntax keyword rspamdParamKeyword ipv4
+syntax keyword rspamdParamKeyword ipv4_mask
+syntax keyword rspamdParamKeyword ipv6
+syntax keyword rspamdParamKeyword ipv6_mask
+syntax keyword rspamdParamKeyword is_whitelist
+syntax keyword rspamdParamKeyword key
+syntax keyword rspamdParamKeyword key_prefix
+syntax keyword rspamdParamKeyword learn_condition
+syntax keyword rspamdParamKeyword level
+syntax keyword rspamdParamKeyword limit
+syntax keyword rspamdParamKeyword log_clean
+syntax keyword rspamdParamKeyword lower_bound
+syntax keyword rspamdParamKeyword mail_from
+syntax keyword rspamdParamKeyword mail_to
+syntax keyword rspamdParamKeyword map
+syntax keyword rspamdParamKeyword max_data_len
+syntax keyword rspamdParamKeyword max_epoch
+syntax keyword rspamdParamKeyword max_rcpt
+syntax keyword rspamdParamKeyword max_score
+syntax keyword rspamdParamKeyword max_size
+syntax keyword rspamdParamKeyword max_train
+syntax keyword rspamdParamKeyword max_usages
 syntax keyword rspamdParamKeyword message
+syntax keyword rspamdParamKeyword meta_headers
+syntax keyword rspamdParamKeyword metric
+syntax keyword rspamdParamKeyword mid_enabled
+syntax keyword rspamdParamKeyword min_bytes
+syntax keyword rspamdParamKeyword min_learns
+syntax keyword rspamdParamKeyword min_score
+syntax keyword rspamdParamKeyword min_tokens
+syntax keyword rspamdParamKeyword name
+syntax keyword rspamdParamKeyword nested_limit
+syntax keyword rspamdParamKeyword no_action
+syntax keyword rspamdParamKeyword no_action_score
+syntax keyword rspamdParamKeyword no_ip
+syntax keyword rspamdParamKeyword openphish_enabled
+syntax keyword rspamdParamKeyword openphish_map
+syntax keyword rspamdParamKeyword openphish_premium
+syntax keyword rspamdParamKeyword password
+syntax keyword rspamdParamKeyword patterns
+syntax keyword rspamdParamKeyword pdf
+syntax keyword rspamdParamKeyword per_user
+syntax keyword rspamdParamKeyword phishtank_enabled
+syntax keyword rspamdParamKeyword phishtank_map
+syntax keyword rspamdParamKeyword pidfile
+syntax keyword rspamdParamKeyword port
+syntax keyword rspamdParamKeyword product_id
+syntax keyword rspamdParamKeyword provider_info
+syntax keyword rspamdParamKeyword provider_type
+syntax keyword rspamdParamKeyword proxy
+syntax keyword rspamdParamKeyword quarantine
+syntax keyword rspamdParamKeyword query_limit
+syntax keyword rspamdParamKeyword rates
+syntax keyword rspamdParamKeyword rbls
+syntax keyword rspamdParamKeyword rcpt_enabled
+syntax keyword rspamdParamKeyword read_only
+syntax keyword rspamdParamKeyword received
+syntax keyword rspamdParamKeyword redirector_domains
+syntax keyword rspamdParamKeyword reject
+syntax keyword rspamdParamKeyword reject_score
+syntax keyword rspamdParamKeyword relevance
+syntax keyword rspamdParamKeyword reporting
+syntax keyword rspamdParamKeyword resolve_ip
+syntax keyword rspamdParamKeyword returncodes
+syntax keyword rspamdParamKeyword rewrite_subject
+syntax keyword rspamdParamKeyword routines
+syntax keyword rspamdParamKeyword rule
+syntax keyword rspamdParamKeyword rules
+syntax keyword rspamdParamKeyword savapi
+syntax keyword rspamdParamKeyword score
+syntax keyword rspamdParamKeyword score_divisor
+syntax keyword rspamdParamKeyword scores
+syntax keyword rspamdParamKeyword second
+syntax keyword rspamdParamKeyword selector
+syntax keyword rspamdParamKeyword sender_from_regexp
+syntax keyword rspamdParamKeyword sender_from_whitelist_user
+syntax keyword rspamdParamKeyword servers
+syntax keyword rspamdParamKeyword skip_multi
+syntax keyword rspamdParamKeyword skip_unknown
+syntax keyword rspamdParamKeyword smtp
+syntax keyword rspamdParamKeyword smtp_port
+syntax keyword rspamdParamKeyword soft_bounce
+syntax keyword rspamdParamKeyword source
+syntax keyword rspamdParamKeyword spam
+syntax keyword rspamdParamKeyword spam_score
+syntax keyword rspamdParamKeyword spf_cache_expire
+syntax keyword rspamdParamKeyword spf_cache_size
+syntax keyword rspamdParamKeyword statfile
+syntax keyword rspamdParamKeyword strict_domains
+syntax keyword rspamdParamKeyword suffix
+syntax keyword rspamdParamKeyword symbol
+syntax keyword rspamdParamKeyword symbol_bad_mx
+syntax keyword rspamdParamKeyword symbol_good_mx
+syntax keyword rspamdParamKeyword symbol_no_mx
+syntax keyword rspamdParamKeyword symbol_rcpt
+syntax keyword rspamdParamKeyword symbol_sender
+syntax keyword rspamdParamKeyword symbol_strict
+syntax keyword rspamdParamKeyword table
+syntax keyword rspamdParamKeyword third
+syntax keyword rspamdParamKeyword threshold
+syntax keyword rspamdParamKeyword time_jitter
+syntax keyword rspamdParamKeyword timeout
+syntax keyword rspamdParamKeyword to
+syntax keyword rspamdParamKeyword to_ip
+syntax keyword rspamdParamKeyword to_ip_from
+syntax keyword rspamdParamKeyword tokenizer
+syntax keyword rspamdParamKeyword train
+syntax keyword rspamdParamKeyword trusted_only
+syntax keyword rspamdParamKeyword txt
+syntax keyword rspamdParamKeyword type
+syntax keyword rspamdParamKeyword update_limit
+syntax keyword rspamdParamKeyword url
+syntax keyword rspamdParamKeyword url_enabled
+syntax keyword rspamdParamKeyword url_map
+syntax keyword rspamdParamKeyword urls_table
+syntax keyword rspamdParamKeyword url_tld_re
+syntax keyword rspamdParamKeyword use
+syntax keyword rspamdParamKeyword user
+syntax keyword rspamdParamKeyword use_settings
+syntax keyword rspamdParamKeyword valid_dkim
+syntax keyword rspamdParamKeyword valid_dmarc
+syntax keyword rspamdParamKeyword valid_spf
+syntax keyword rspamdParamKeyword weight
+syntax keyword rspamdParamKeyword whitelist
+syntax keyword rspamdParamKeyword whitelist_domains_url
+syntax keyword rspamdParamKeyword whitelisted_rcpts
+syntax keyword rspamdParamKeyword whitelist_exception
+syntax keyword rspamdParamKeyword whitelist_symbols
+syntax keyword rspamdParamKeyword write_servers
+syntax keyword rspamdParamKeyword x-spamd-bar
+syntax keyword rspamdParamKeyword x-spam-level
+syntax keyword rspamdParamKeyword x-spam-status
 
 " Variables
 syntax keyword rspamdVarDef CONFDIR
