@@ -236,6 +236,7 @@ syntax keyword rspamdParamKeyword phishtank_map
 syntax keyword rspamdParamKeyword pidfile
 syntax keyword rspamdParamKeyword policy
 syntax keyword rspamdParamKeyword port
+syntax keyword rspamdParamKeyword prefix
 syntax keyword rspamdParamKeyword product_id
 syntax keyword rspamdParamKeyword provider_info
 syntax keyword rspamdParamKeyword provider_type
