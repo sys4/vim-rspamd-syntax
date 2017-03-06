@@ -95,12 +95,14 @@ syntax keyword rspamdParamKeyword country
 syntax keyword rspamdParamKeyword country_prefix
 syntax keyword rspamdParamKeyword custom_select
 syntax keyword rspamdParamKeyword db
+syntax keyword rspamdParamKeyword debug_ip
 syntax keyword rspamdParamKeyword debug_modules
 syntax keyword rspamdParamKeyword default_exclude_users
 syntax keyword rspamdParamKeyword default_from
 syntax keyword rspamdParamKeyword default_received
 syntax keyword rspamdParamKeyword default_unknown
 syntax keyword rspamdParamKeyword description
+syntax keyword rspamdParamKeyword disable_hyperscan
 syntax keyword rspamdParamKeyword disabled_modules
 syntax keyword rspamdParamKeyword disposable_cc
 syntax keyword rspamdParamKeyword disposable_envfrom
@@ -190,7 +192,11 @@ syntax keyword rspamdParamKeyword learn_condition
 syntax keyword rspamdParamKeyword level
 syntax keyword rspamdParamKeyword limit
 syntax keyword rspamdParamKeyword local_addrs
+syntax keyword rspamdParamKeyword local_networks
+syntax keyword rspamdParamKeyword log_buffer
 syntax keyword rspamdParamKeyword log_clean
+syntax keyword rspamdParamKeyword log_color
+syntax keyword rspamdParamKeyword log_urls
 syntax keyword rspamdParamKeyword log_format
 syntax keyword rspamdParamKeyword log_re_cache
 syntax keyword rspamdParamKeyword lower_bound
@@ -199,6 +205,7 @@ syntax keyword rspamdParamKeyword mail_from
 syntax keyword rspamdParamKeyword mail_to
 syntax keyword rspamdParamKeyword map
 syntax keyword rspamdParamKeyword map_watch_interval
+syntax keyword rspamdParamKeyword max_cores_count
 syntax keyword rspamdParamKeyword max_cores_size
 syntax keyword rspamdParamKeyword max_data_len
 syntax keyword rspamdParamKeyword max_epoch
@@ -215,9 +222,11 @@ syntax keyword rspamdParamKeyword min_bytes
 syntax keyword rspamdParamKeyword min_learns
 syntax keyword rspamdParamKeyword min_score
 syntax keyword rspamdParamKeyword min_tokens
+syntax keyword rspamdParamKeyword min_word_len
 syntax keyword rspamdParamKeyword modules
 syntax keyword rspamdParamKeyword name
 syntax keyword rspamdParamKeyword nameserver
+syntax keyword rspamdParamKeyword neighbours
 syntax keyword rspamdParamKeyword nested_limit
 syntax keyword rspamdParamKeyword no_action
 syntax keyword rspamdParamKeyword no_action_score
