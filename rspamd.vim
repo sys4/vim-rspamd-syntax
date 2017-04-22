@@ -165,6 +165,7 @@ syntax keyword rspamdParamKeyword helo
 syntax keyword rspamdParamKeyword helo_enabled
 syntax keyword rspamdParamKeyword history_file
 syntax keyword rspamdParamKeyword history_rows
+syntax keyword rspamdParamKeyword honor_action
 syntax keyword rspamdParamKeyword host
 syntax keyword rspamdParamKeyword hostname_enabled
 syntax keyword rspamdParamKeyword hs_cache_dir
@@ -196,9 +197,9 @@ syntax keyword rspamdParamKeyword local_networks
 syntax keyword rspamdParamKeyword log_buffer
 syntax keyword rspamdParamKeyword log_clean
 syntax keyword rspamdParamKeyword log_color
-syntax keyword rspamdParamKeyword log_urls
 syntax keyword rspamdParamKeyword log_format
 syntax keyword rspamdParamKeyword log_re_cache
+syntax keyword rspamdParamKeyword log_urls
 syntax keyword rspamdParamKeyword lower_bound
 syntax keyword rspamdParamKeyword lua
 syntax keyword rspamdParamKeyword mail_from
@@ -245,6 +246,7 @@ syntax keyword rspamdParamKeyword phishtank_map
 syntax keyword rspamdParamKeyword pidfile
 syntax keyword rspamdParamKeyword policy
 syntax keyword rspamdParamKeyword port
+syntax keyword rspamdParamKeyword prefilter
 syntax keyword rspamdParamKeyword prefix
 syntax keyword rspamdParamKeyword product_id
 syntax keyword rspamdParamKeyword provider_info
@@ -259,10 +261,13 @@ syntax keyword rspamdParamKeyword rcpt_enabled
 syntax keyword rspamdParamKeyword read_only
 syntax keyword rspamdParamKeyword received
 syntax keyword rspamdParamKeyword redirector_domains
+syntax keyword rspamdParamKeyword regexp
 syntax keyword rspamdParamKeyword reject
 syntax keyword rspamdParamKeyword reject_score
 syntax keyword rspamdParamKeyword relevance
 syntax keyword rspamdParamKeyword reporting
+syntax keyword rspamdParamKeyword require_action
+syntax keyword rspamdParamKeyword require_symbols
 syntax keyword rspamdParamKeyword resolve_ip
 syntax keyword rspamdParamKeyword retransmits
 syntax keyword rspamdParamKeyword returncodes
@@ -293,6 +298,7 @@ syntax keyword rspamdParamKeyword spf_cache_expire
 syntax keyword rspamdParamKeyword spf_cache_size
 syntax keyword rspamdParamKeyword statfile
 syntax keyword rspamdParamKeyword strict_domains
+syntax keyword rspamdParamKeyword subject
 syntax keyword rspamdParamKeyword suffix
 syntax keyword rspamdParamKeyword symbol
 syntax keyword rspamdParamKeyword symbol_bad_mx
@@ -301,6 +307,7 @@ syntax keyword rspamdParamKeyword symbol_no_mx
 syntax keyword rspamdParamKeyword symbol_rcpt
 syntax keyword rspamdParamKeyword symbol_sender
 syntax keyword rspamdParamKeyword symbol_strict
+syntax keyword rspamdParamKeyword symbols
 syntax keyword rspamdParamKeyword systemd
 syntax keyword rspamdParamKeyword table
 syntax keyword rspamdParamKeyword tempdir
