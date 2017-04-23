@@ -64,11 +64,13 @@ syntax keyword rspamdParamKeyword add_header
 syntax keyword rspamdParamKeyword add_header_score
 syntax keyword rspamdParamKeyword algorithm
 syntax keyword rspamdParamKeyword allow_raw_input
+syntax keyword rspamdParamKeyword apply
 syntax keyword rspamdParamKeyword archive_extensions
 syntax keyword rspamdParamKeyword asn_prefix
 syntax keyword rspamdParamKeyword asn_table
 syntax keyword rspamdParamKeyword attachments_only
 syntax keyword rspamdParamKeyword attachments_table
+syntax keyword rspamdParamKeyword authenticated
 syntax keyword rspamdParamKeyword authentication-results
 syntax keyword rspamdParamKeyword autolearn
 syntax keyword rspamdParamKeyword backend
@@ -158,6 +160,8 @@ syntax keyword rspamdParamKeyword fuzzy_symbols
 syntax keyword rspamdParamKeyword good_host
 syntax keyword rspamdParamKeyword greylist
 syntax keyword rspamdParamKeyword group
+syntax keyword rspamdParamKeyword groups_disabled
+syntax keyword rspamdParamKeyword groups_enabled
 syntax keyword rspamdParamKeyword ham_score
 syntax keyword rspamdParamKeyword hash
 syntax keyword rspamdParamKeyword header
@@ -257,6 +261,7 @@ syntax keyword rspamdParamKeyword query_limit
 syntax keyword rspamdParamKeyword rates
 syntax keyword rspamdParamKeyword raw_mode
 syntax keyword rspamdParamKeyword rbls
+syntax keyword rspamdParamKeyword rcpt
 syntax keyword rspamdParamKeyword rcpt_enabled
 syntax keyword rspamdParamKeyword read_only
 syntax keyword rspamdParamKeyword received
@@ -266,6 +271,7 @@ syntax keyword rspamdParamKeyword reject
 syntax keyword rspamdParamKeyword reject_score
 syntax keyword rspamdParamKeyword relevance
 syntax keyword rspamdParamKeyword reporting
+syntax keyword rspamdParamKeyword request_header
 syntax keyword rspamdParamKeyword require_action
 syntax keyword rspamdParamKeyword require_symbols
 syntax keyword rspamdParamKeyword resolve_ip
@@ -308,6 +314,8 @@ syntax keyword rspamdParamKeyword symbol_rcpt
 syntax keyword rspamdParamKeyword symbol_sender
 syntax keyword rspamdParamKeyword symbol_strict
 syntax keyword rspamdParamKeyword symbols
+syntax keyword rspamdParamKeyword symbols_disabled
+syntax keyword rspamdParamKeyword symbols_enabled
 syntax keyword rspamdParamKeyword systemd
 syntax keyword rspamdParamKeyword table
 syntax keyword rspamdParamKeyword tempdir
@@ -337,6 +345,7 @@ syntax keyword rspamdParamKeyword user
 syntax keyword rspamdParamKeyword valid_dkim
 syntax keyword rspamdParamKeyword valid_dmarc
 syntax keyword rspamdParamKeyword valid_spf
+syntax keyword rspamdParamKeyword want_spam
 syntax keyword rspamdParamKeyword weight
 syntax keyword rspamdParamKeyword whitelist
 syntax keyword rspamdParamKeyword whitelist_domains_url
